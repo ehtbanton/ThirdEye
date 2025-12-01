@@ -1,2 +1,66 @@
 # ThirdEye
 Edge AI for the visually impaired. See what you don't.
+
+## 1. Overview
+ThirdEye is a wearable assistive device for the visually impaired which increases situational awareness through audio feedback. It's a vision-enabled eye-tracking baseball cap connected to a mobile companion app for remote AI workflows
+
+Built into a baseball cap and powered by a Raspberry Pi Compute Module 4, the system runs real-time gaze tracking using an Edge Impulse model deployed locally at the edge. This gaze signal is used to interact with the environment through audio feedback, allowing users to understand what is around them.
+
+_**Edge Impulse Project: [link to EI]**_\
+_**Demo Video: https://youtu.be/tBdOVURnGnc**_
+
+## 2. What This Repository Contains
+This repository includes:
+- Source code for live inference on the CM4
+- Preprocessing scripts for eye image extraction
+- Links to the Edge Impulse project
+- Documentation, pitch deck, and demo videos
+
+## 3. System Architecture
+### Hardware
+#### Core compute
+- Raspberry Pi Compute Module 4 (8GB RAM, WiFi)
+- StereoPi V2 Slim carrier
+#### Cameras & audio
+- 2x Raspberry Pi Camera V3 Wide (1080p30, 120° FOV)
+- 1x Arducam USB mini webcam (1080p30, 75° FOV + mic)
+- Bone conduction surface transducer
+#### Power & mechanical
+- USB-C battery pack
+- Baseball cap mounting system
+
+**Edge device for the track: Raspberry Pi CM4 running Linux + Edge Impulse Linux SDK.**
+
+### Software
+- Python inference script
+- Edge Impulse model (CNN)
+
+#### Edge Impulse model
+**Gaze Classifier (image/vision)**
+- Project: [link to project]
+- Type: Image Classification (2D CNN)
+- Input:
+  - Eye crop from the camera
+  - Size: 96x96 pixels
+  - Colour: Grayscale
+- Output classes:
+  - `{1: far left, 2: left, 3: center, 4: right, 5: far right}`
+- Architecture:
+  - Input layer: 9216 features
+  - Conv2D + pooling:
+      - Block 1: 16 filters, 3 kernel size, 1 layer
+      - Block 1: 32 filters, 3 kernel size, 1 layer
+      - Block 1: 64 filters, 3 kernel size, 1 layer
+  - Flatten
+  - Dense
+  - Dropout: rate 0.25
+  - Output dense: 5 neurons
+- Training:
+  - Samples:
+  - Train/validation split:
+  - Training cycles:
+  - Learning rate:
+**Dataset**
+Self-recorded 30fps video from the eye camera, sampled at 10Hz. Extracted frames are cropped to a fixed eye region and resized to 96x96. Each crop manually labelled into one of five horizontal bins based on reference point. All images are self captured by the team and are **not** from third-party datasets.
+
+  
