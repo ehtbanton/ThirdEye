@@ -6,9 +6,9 @@ ThirdEye is a wearable assistive device for the visually impaired which increase
 
 Built into a baseball cap and powered by a Raspberry Pi Compute Module 4, the system runs real-time gaze tracking using an Edge Impulse model deployed locally at the edge. This gaze signal is used to interact with the environment through audio feedback, allowing users to understand what is around them.
 
-_**Edge Impulse Project: [ThirdEye on Edge Impulse](https://studio.edgeimpulse.com/public/830287/live)**_\
-_**Demo Video: [ThirdEye Demonstration Video](https://youtu.be/tBdOVURnGnc)**_\
-_**Presentation: **_
+💻 _**Edge Impulse Project: [ThirdEye on Edge Impulse](https://studio.edgeimpulse.com/public/830287/live)**_\
+📼 _**Demo Video: [ThirdEye Demonstration Video](https://youtu.be/tBdOVURnGnc)**_\
+📊 _**Presentation: [ThirdEye Presentation](https://github.com/ehtbanton/ThirdEye/blob/8accd95094bb0257f0e968f4577bd8d040e161d6/ThirdEye%20Presentation.pdf)**_
 
 ## 2. What This Repository Contains
 This repository includes:
