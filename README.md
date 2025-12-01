@@ -6,8 +6,9 @@ ThirdEye is a wearable assistive device for the visually impaired which increase
 
 Built into a baseball cap and powered by a Raspberry Pi Compute Module 4, the system runs real-time gaze tracking using an Edge Impulse model deployed locally at the edge. This gaze signal is used to interact with the environment through audio feedback, allowing users to understand what is around them.
 
-_**Edge Impulse Project: [link to EI]**_\
-_**Demo Video: https://youtu.be/tBdOVURnGnc**_
+_**Edge Impulse Project: [ThirdEye on Edge Impulse](https://studio.edgeimpulse.com/public/830287/live)**_\
+_**Demo Video: [ThirdEye Demonstration Video](https://youtu.be/tBdOVURnGnc)**_\
+_**Presentation: **_
 
 ## 2. What This Repository Contains
 This repository includes:
@@ -33,19 +34,18 @@ This repository includes:
 
 ### Software
 - Python inference script
-- Edge Impulse model (CNN)
+- Edge Impulse model (Convolutional Neural Network)
 
-#### Edge Impulse model
-**Gaze Classifier (image/vision)**
-- Project: [link to project]
-- Type: Image Classification (2D CNN)
-- Input:
+### Edge Impulse model - Gaze Classifier
+- **Project:** [link to project]
+- **Type:** Image Classification (2D CNN)
+- **Input:**
   - Eye crop from the camera
   - Size: 96x96 pixels
   - Colour: Grayscale
-- Output classes:
+- **Output classes:**
   - `{1: far left, 2: left, 3: center, 4: right, 5: far right}`
-- Architecture:
+- **Architecture:**
   - Input layer: 9216 features
   - Conv2D + pooling:
       - Block 1: 16 filters, 3 kernel size, 1 layer
@@ -55,12 +55,15 @@ This repository includes:
   - Dense
   - Dropout: rate 0.25
   - Output dense: 5 neurons
-- Training:
+- **Training:**
   - Samples:
   - Train/validation split:
   - Training cycles:
   - Learning rate:
-**Dataset**
-Self-recorded 30fps video from the eye camera, sampled at 10Hz. Extracted frames are cropped to a fixed eye region and resized to 96x96. Each crop manually labelled into one of five horizontal bins based on reference point. All images are self captured by the team and are **not** from third-party datasets.
-Dataset is not public in this repository - contact the owner.
-  
+
+#### Dataset
+Self-recorded 30 fps video from the eye camera, subsampled at 10Hz. Extracted frames were cropped to a fixed eye region and resized to 96x96. Each crop manually labelled into one of five horizontal bins based on reference point. All images are self captured by the team and are **not** from third-party datasets.
+
+### IMPORTANT - PLEASE NOTE
+**Dataset is not public in this repository - contact the owner.**  
+For privacy purposes, the linked project contains an imported version of the original Edge Impulse model only. **The full original project and dataset can be made available to judges upon request under controlled access.**
