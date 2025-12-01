@@ -2,7 +2,7 @@
 Edge AI for the visually impaired. See what you don't.
 
 ## 1. Overview
-ThirdEye is a wearable assistive device for the visually impaired which increases situational awareness through audio feedback. It's a vision-enabled eye-tracking baseball cap connected to a mobile companion app for remote AI workflows
+ThirdEye is a wearable assistive device for the visually impaired which increases situational awareness through audio feedback. It's a vision-enabled eye-tracking baseball cap connected to a mobile companion app for remote AI workflows.
 
 Built into a baseball cap and powered by a Raspberry Pi Compute Module 4, the system runs real-time gaze tracking using an Edge Impulse model deployed locally at the edge. This gaze signal is used to interact with the environment through audio feedback, allowing users to understand what is around them.
 
@@ -19,15 +19,15 @@ This repository includes:
 ## 3. System Architecture
 ### Hardware
 #### Core compute
-- Raspberry Pi Compute Module 4 (8GB RAM, WiFi)
+- Raspberry Pi Compute Module 4 (8GB RAM, 5GHz wireless)
 - StereoPi V2 Slim carrier
 #### Cameras & audio
 - 2x Raspberry Pi Camera V3 Wide (1080p30, 120° FOV)
 - 1x Arducam USB mini webcam (1080p30, 75° FOV + mic)
 - Bone conduction surface transducer
 #### Power & mechanical
-- USB-C battery pack
-- Baseball cap mounting system
+- Cableless USB-C battery pack, or with wired connection and no battery
+- Baseball cap mounting system (majority of electronics in the visor)
 
 **Edge device for the track: Raspberry Pi CM4 running Linux + Edge Impulse Linux SDK.**
 
@@ -62,5 +62,5 @@ This repository includes:
   - Learning rate:
 **Dataset**
 Self-recorded 30fps video from the eye camera, sampled at 10Hz. Extracted frames are cropped to a fixed eye region and resized to 96x96. Each crop manually labelled into one of five horizontal bins based on reference point. All images are self captured by the team and are **not** from third-party datasets.
-
+Dataset is not public in this repository - contact the owner.
   
